@@ -1,0 +1,12 @@
+{
+  "name": "pdf-presentation",
+  "description": "Generate professional PDF reports and presentations from structured content using WeasyPrint. Supports evaluations, proposals, assessments, and any structured document.",
+  "version": "1.0.0",
+  "author": "Juan Marchetto",
+  "license": "MIT",
+  "skills": ["SKILL.md"],
+  "dependencies": {
+    "python": ">=3.8",
+    "pip": ["weasyprint"]
+  }
+}

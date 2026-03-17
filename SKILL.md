@@ -153,3 +153,30 @@ Tell the user:
 - Include numerical scores when possible for visual impact
 - Specify a title if you want a custom cover page heading
 - For Architect evaluations, the skill auto-detects the format from standard output
+
+## Example Output
+
+```
+PDF generated: ./report-skills-evaluation.pdf
+- Pages: 8
+- Sections: Cover, Executive Summary, Value Matrix, Risk Assessment, Recommendations
+- Score visualizations: Opportunity Score gauge (7.0/10), 6 sub-score bars
+- File size: 245 KB
+```
+
+The PDF includes: professional cover page with title and date, table of contents, color-coded score tables, SVG bar charts for sub-scores, risk assessment with severity indicators, and numbered recommendations.
+
+## Fallback Without WeasyPrint
+
+If WeasyPrint is not installed, the skill generates a standalone HTML file instead. This HTML file:
+- Can be opened in any browser
+- Can be printed to PDF via Ctrl+P / Cmd+P
+- Contains all the same styling and visualizations
+- Is a valid intermediate output, not a degraded experience
+
+## Error Handling
+
+- **WeasyPrint not installed**: Fall back to HTML output (see above). Suggest `pip install weasyprint` for full PDF support.
+- **Missing fonts**: WeasyPrint uses system fonts. If text renders incorrectly, specify a font family in the CSS or install the needed font.
+- **SVG not rendering**: Ensure SVG elements use inline styles, not CSS classes. WeasyPrint has limited CSS support for SVG.
+- **Large content overflows page**: The template uses CSS `page-break-inside: avoid` for tables and score blocks. If content still overflows, it splits across pages gracefully.

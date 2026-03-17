@@ -38,26 +38,23 @@ On macOS:
 brew install pango
 ```
 
-## Installation
+## Install
 
-### Method 1: Clone directly
-
-```bash
-git clone https://github.com/juanmarchetto/pdf-presentation-skill.git
+```
+/plugin marketplace add JuanMarchetto/agent-skills
+/plugin install pdf-presentation@agent-skills
 ```
 
-Add the skill directory to your Claude Code project configuration.
-
-### Method 2: As a git submodule
-
+Or via [skills.sh](https://skills.sh):
 ```bash
-cd your-project/
-git submodule add https://github.com/juanmarchetto/pdf-presentation-skill.git skills/pdf-presentation
+npx skills add JuanMarchetto/pdf-presentation-skill
 ```
 
-### Method 3: Manual download
-
-Download the repository contents and place them in a directory accessible to Claude Code. Ensure `SKILL.md` is at the root of the skill directory.
+Or manually:
+```bash
+git clone https://github.com/JuanMarchetto/pdf-presentation-skill.git
+cp -r pdf-presentation-skill ~/.claude/skills/pdf-presentation
+```
 
 ## Installing WeasyPrint
 
